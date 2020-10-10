@@ -6,3 +6,5 @@ buildAndReleaseTask/.DS_Store
 logs
 
 *.vsix
+
+.env
