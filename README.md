@@ -1,4 +1,4 @@
-Create Environment Task
+Create Environment Task ![CI](https://github.com/shakenbytes/azure-pipelines-create-environment-task/workflows/CI/badge.svg)
 
 This task creates a new environment under your project, so you can make sure the environment you are deploying to is accessible and configured.
 
