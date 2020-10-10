@@ -32,5 +32,5 @@ jobs:
         working-directory: buildAndReleaseTask
             
       - name: Run Test
-        run: npm run test
+        run: npm test
         working-directory: buildAndReleaseTask
