@@ -1,0 +1,31 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+  "id": "a4e55ca0-f28f-4a5f-874c-c1f356b5a6da",
+  "name": "frankely-azure-pipelines-create-environment",
+  "friendlyName": "Azure Pipelines Environment Creation Task",
+  "description": "Create Azure DevOps Pipeline Environments",
+  "helpMarkDown": "",
+  "category": "Utility",
+  "author": "Frankely Diaz",
+  "version": {
+    "Major": 0,
+    "Minor": 1,
+    "Patch": 0
+  },
+  "instanceNameFormat": "Echo $(samplestring)",
+  "inputs": [
+    {
+      "name": "environmentName",
+      "type": "string",
+      "label": "Environment Name",
+      "defaultValue": "Default.Envivornment",
+      "required": true,
+      "helpMarkDown": "This is the name of the environment you want to create. Example: AvocadoService.WebApi.CDE"
+    }
+  ],
+  "execution": {
+    "Node10": {
+      "target": "index.js"
+    }
+  }
+}
