@@ -28,3 +28,4 @@ jobs:
           version: 10.x
           
       - run: npm run test
+        working-directory: buildAndReleaseTask
