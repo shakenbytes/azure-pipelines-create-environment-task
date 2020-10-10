@@ -8,3 +8,7 @@ logs
 *.vsix
 
 .env
+
+buildAndReleaseTask/dist/
+
+buildAndReleaseTask/.taskkey
