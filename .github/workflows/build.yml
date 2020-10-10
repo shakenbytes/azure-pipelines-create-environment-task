@@ -28,8 +28,8 @@ jobs:
           version: 10.x
           
       - name: Install Dependencies
-        run: npm ci
-        working-directory: buildAndReleaseTask
+        run: ./install.sh
+        working-directory: buildAndReleaseTask      
             
       - name: Run Test
         run: npm test
