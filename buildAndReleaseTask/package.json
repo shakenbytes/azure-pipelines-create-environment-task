@@ -11,7 +11,7 @@
     "validate": "npx prettier --check .",
     "format": "npx prettier --write .",
     "compile": "tsc",
-    "test": "mocha **/tests/_suite.js",
+    "test": "mocha **/tests/_suite.js --timeout 10000",
     "execute": "tsc & cross-env INPUT_ENVIRONMENTNAME=Avocado.WebApi.CDE node dist/index.js"
   },
   "author": "Frankely Diaz",
