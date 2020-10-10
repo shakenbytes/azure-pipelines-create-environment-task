@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "azure-pipelines-create-environment-task",
     "name": "Azure Pipelines Environment Creation Task",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "publisher": "shaken-bytes",
     "targets": [
         {

@@ -1,0 +1,1 @@
+tfx extension publish --manifest-globs vss-extension.json --share-with shaken-bytes --rev-version --vsix
