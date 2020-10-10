@@ -17,6 +17,8 @@ defaults:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   ci:
+    env:
+      NODE_ENV: ci
     runs-on: ubuntu-latest
     container:
       image: node:10
