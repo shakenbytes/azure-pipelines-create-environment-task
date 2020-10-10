@@ -26,3 +26,5 @@ jobs:
         uses: actions/setup-node@v2.1.2
         with:
           version: 10.x
+          
+      - run: npm run test
