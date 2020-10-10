@@ -27,5 +27,10 @@ jobs:
         with:
           version: 10.x
           
-      - run: npm run test
+      - name: Install Dependencies
+        run: npm ci
+        working-directory: buildAndReleaseTask
+            
+      - name: Run Test
+        run: npm run test
         working-directory: buildAndReleaseTask
