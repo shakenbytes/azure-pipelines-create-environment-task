@@ -43,6 +43,7 @@ jobs:
         run: |
           npm install typescript -g
           npm install tfx-cli -g
+          npm install
           npm run compile-production
           
       - name: Package
