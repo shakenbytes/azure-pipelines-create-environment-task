@@ -1,1 +1,1 @@
-tfx extension create --manifest-globs vss-extension.json
+tfx extension create --manifest-globs vss-extension.json --output-path dist/
