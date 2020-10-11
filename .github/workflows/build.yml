@@ -27,23 +27,7 @@ jobs:
           npm install
           npm run compile
           npm test
-  
-      - uses: actions/upload-artifact@v2
-        name: Package
-        with:
-          name: artifact
-          path: |
-            buildAndReleaseTask/
-            image/**
-            vss-extension.json
-  package:
-    needs: [build]
-    env: 
-      NODE_ENV: ci
-    runs-on: ubuntu-latest
-    container:
-      image: node:10
-    steps:
+          
       - name: Package
         run: | 
           npm install tfx-cli -g
