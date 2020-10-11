@@ -12,7 +12,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  ci:
+  build:
     defaults:
       run:
         working-directory: buildAndReleaseTask
@@ -21,7 +21,6 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: node:10
-
     steps:
       - uses: actions/checkout@v1
       - name: Install & Tests
@@ -29,3 +28,15 @@ jobs:
           npm install
           npm run compile
           npm test
+  package:
+    needs: [build]
+    env: 
+      NODE_ENV: ci
+    runs-on: ubuntu-latest
+    container:
+      image: node:10
+    steps:
+      - name: Package
+        run: | 
+          npm install tfx-cli -g
+          ./package.sh
