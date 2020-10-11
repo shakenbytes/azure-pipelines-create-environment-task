@@ -20,20 +20,22 @@ jobs:
       image: node:10
     steps:
       - uses: actions/checkout@v1
-      - name: Install & Tests
+        
+      - name: Build & Tests
+        working-directory: buildAndReleaseTask
         run: |
-          working-directory: buildAndReleaseTask
           npm install
           npm run compile
           npm test
-      - name: Package
-        run: |
-          npm install tfx-cli -g
-          ./package.sh
+  
       - uses: actions/upload-artifact@v2
+        name: Package
         with:
           name: artifact
-          path: dist/
+          path: |
+            buildAndReleaseTask/
+            image/**
+            vss-extension.json
   package:
     needs: [build]
     env: 
