@@ -28,6 +28,7 @@ jobs:
           npm run compile
           npm test
   cd:
+    needs: [ci]
     env:
       NODE_ENV: production
       PAT: ${{ secrets.PAT }}
@@ -37,13 +38,12 @@ jobs:
     steps:
       - uses: actions/checkout@v1
         
-      - name: Build & Tests
+      - name: Build 
         working-directory: buildAndReleaseTask
         run: |
-          npm install
+          ./install.sh
           npm run compile
           
       - name: Package
         run: | 
-          npm install tfx-cli -g
           ./publish.sh
