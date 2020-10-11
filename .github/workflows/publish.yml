@@ -15,6 +15,7 @@ jobs:
   publish:
     env:
       NODE_ENV: cd
+      PAT: ${{ secrets.PAT }}
     runs-on: ubuntu-latest
     container:
       image: node:10
