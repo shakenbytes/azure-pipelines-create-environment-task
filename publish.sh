@@ -1,1 +1,1 @@
-tfx extension publish --manifest-globs vss-extension.json --share-with shaken-bytes --rev-version --vsix
+tfx extension publish --manifest-globs vss-extension.json --share-with shaken-bytes --auth-type pat -p $PAT
