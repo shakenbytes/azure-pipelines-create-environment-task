@@ -12,10 +12,9 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  publish:
+  ci:
     env:
       NODE_ENV: cd
-      PAT: ${{ secrets.PAT }}
     runs-on: ubuntu-latest
     container:
       image: node:10
@@ -28,9 +27,23 @@ jobs:
           npm install
           npm run compile
           npm test
+  cd:
+    env:
+      NODE_ENV: production
+      PAT: ${{ secrets.PAT }}
+    runs-on: ubuntu-latest
+    container:
+      image: node:10
+    steps:
+      - uses: actions/checkout@v1
+        
+      - name: Build & Tests
+        working-directory: buildAndReleaseTask
+        run: |
+          npm install
+          npm run compile
           
       - name: Package
         run: | 
           npm install tfx-cli -g
-          ./package.sh
           ./publish.sh
