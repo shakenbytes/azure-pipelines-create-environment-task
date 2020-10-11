@@ -41,8 +41,9 @@ jobs:
       - name: Build 
         working-directory: buildAndReleaseTask
         run: |
-          ./install.sh
-          npm run compile
+          npm install typescript -g
+          npm install tfx-cli -g
+          npm run compile-production
           
       - name: Package
         run: | 

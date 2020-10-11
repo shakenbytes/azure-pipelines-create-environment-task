@@ -11,6 +11,7 @@
     "validate": "npx prettier --check .",
     "format": "npx prettier --write .",
     "compile": "tsc",
+    "compile-production" : "tsc --project tsconfig.production.json",
     "test": "mocha **/tests/_suite.js --timeout 10000",
     "execute": "tsc & cross-env INPUT_ENVIRONMENTNAME=Avocado.WebApi.CDE node dist/index.js"
   },
